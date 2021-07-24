@@ -1,7 +1,10 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[home results]
+  skip_before_action :authenticate_user!, only: %i[home results earlybird]
 
   def home
+  end
+
+  def earlybird
   end
 
   def dashboard
