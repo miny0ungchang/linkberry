@@ -56,18 +56,18 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
    tr {
-      
+
      &:nth-child(2n + 1) td:last-child {
         background:#fdb029
      }
-     
+
      &:nth-child(2n) td:last-child {
-        background: #ec5c52; 
+        background: #ec5c52;
      }
    }
-   
+
    th, td {
-      padding: 1em; 
+      padding: 1em;
       font-size: 12px;
       width: 50px;
       text-align: left;
@@ -209,4 +209,9 @@ table {
   margin-left: 15px;
   color: white;
   width: 150px
+}
+
+
+.main-wrapper {
+  height: 100vh;
 }
