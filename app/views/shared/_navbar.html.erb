@@ -26,11 +26,11 @@
         <div class="d-none" id="current-user-email">
           <%= current_user.email %>
         </div>
-        
+
         <% if current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key, class: "avatar" %>
         <% else %>
-          <%= image_tag('placeholder.jpg', class: "avatar dropdown-toggle", id: "navbarDropdown", 
+          <%= image_tag('placeholder.jpg', class: "avatar dropdown-toggle", id: "navbarDropdown",
         data: { toggle: "dropdown"} ) %>
         <% end %>
 
