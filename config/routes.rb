@@ -31,6 +31,11 @@ Rails.application.routes.draw do
 
   resources :course_roadmaps, only: [:destroy]
 
+
+  resources :prospects, only: [:new, :create]
+
+
+
   get '/chat/:id', to: 'chats#chat', as: :chat
   post 'chat/:id', to: 'messages#create', as: :message
 end
