@@ -31,7 +31,7 @@ Rails.application.routes.draw do
 
   resources :course_roadmaps, only: [:destroy]
 
-
+  get '/welcome', to: 'prospects#new', as: :welcome
   resources :prospects, only: [:new, :create]
 
 
