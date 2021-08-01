@@ -1,50 +1,52 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand" do %>
-  <%= image_tag("cdlogo.PNG") %>
-  <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<header>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <%= link_to root_path, class: "navbar-brand" do %>
+    LinkBerry   
+    <%= image_tag("linkberrylogo.png") %>
+    <% end %>
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "My Networks", "/dashboard/networks", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "My Dashboard", "/dashboard", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-        </li>
-        <div class="d-none" id="current-user-email">
-          <%= current_user.email %>
-        </div>
-        
-        <% if current_user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key, class: "avatar" %>
-        <% else %>
-          <%= image_tag('placeholder.jpg', class: "avatar dropdown-toggle", id: "navbarDropdown", 
-        data: { toggle: "dropdown"} ) %>
-        <% end %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <%# if user_signed_in? %>
+          <%# <li class="nav-item active"> %>
+            <%# <%= link_to "Home", root_path, class: "nav-link" %> 
+          <%# </li> %>
+          <%# <li class="nav-item"> %>
+            <%# <%= link_to "My Networks", "/dashboard/networks", class: "nav-link" %> 
+          <%# </li> %>
+          <%# <li class="nav-item"> %>
+            <%# <%= link_to "My Dashboard", "/dashboard", class: "nav-link" %> 
+          <%# </li> %>
+          <%# <li class="nav-item"> %>
+            <%# <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %> 
+          <%# </li> %>
+          <%# <div class="d-none" id="current-user-email"> %>
+            <%# <%= current_user.email %> 
+          <%# </div> %>
+          
+          <%# <% if current_user.photo.attached? %> 
+            <%# <%= cl_image_tag current_user.photo.key, class: "avatar" %> 
+          <%# <% else %> 
+            <%# <%= image_tag('placeholder.jpg', class: "avatar dropdown-toggle", id: "navbarDropdown",  %>
+          <%# data: { toggle: "dropdown"} ) %> 
+          <%# <% end %> 
 
-      <% else %>
-      <li class="nav-item">
-        <%= link_to "Sign Up", new_user_registration_path , class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <p class="nav-link">Already a member?</p>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-      </li>
-      <% end %>
-    </ul>
+        <%# <% else %> 
+        <li class="nav-item">  
+          <%= mail_to "contact@linkberry.com", "Contact us", class: "contact" %>
+        </li>
+        <%# <li class="nav-item"> %>
+          <%# <%= link_to "Sign Up", new_user_registration_path , class: "nav-link" %> 
+        <%# </li> %>
+        <%# <li class="nav-item"> %>
+          <%# <p class="nav-link">Already a member?</p> %>
+        <%# </li> %>
+        <%# <li class="nav-item"> %>
+          <%# <%= link_to "Login", new_user_session_path, class: "nav-link" %> 
+        <%# </li> %>
+        <%# <% end %> 
+      </ul>
+    </div>
   </div>
-</div>
+</header>
