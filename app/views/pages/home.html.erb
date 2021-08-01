@@ -1,109 +1,119 @@
-<div class="home-page-wrap">
+<div class="home-page">
+  <div class="home-page-body">
 
-
-  <div class="home-form-container">
-    <div class="container px-3" style="height:inherit;">
-      <div class="row d-flex flex-wrap align-items-center" style="height:inherit;">
-        <div class="col-12 col-md-6 position-relative">
-          <div class="hero-title">
-            <h1 class="display-4 text-left dela-gothic">LinkBerry</h1>
-            <p class="h2 text-secondary">Connect your career experience to your dream job in tech</p>
-          </div>
-          <div class="hero-form mt-5">
-            <%= form_tag show_pages_path, method: :get do %>
-            <form class="simple-form">
-              <div class="form-group text-left mb-4">
-                <h3 class="h5 font-weight-bold text-uppercase mb-0 dela-gothic"><label for="exampleFormControlSelect1">I'm working as</label></h3>
-                <select class="form-control rounded-sm" <%= search_field_tag :query_role, params[:query_role] %> id="industry_role">
-                  <option value="" disabled selected>Select your current role</option>
-                  <option>Marketing</option>
-                  <option>Design</option>
-                  <option>Product Management</option>
-                  <option>Copywriting</option>
-                  <option>Account Management</option>
-                  <option>Project Management</option>
-                  <option>Business Analysis</option>
-                  <option>Risk Management</option>
-                  <option>Human Resources</option>
-                  <option>Accounting</option>
-                  <option>Sales</option>
-                  <option>Customer Support</option>
-                  <option>Operations</option>
-                  <option>Research</option>
-                  <option>Instruction/Coaching</option>
-                  <option>Consulting</option>
-                  <option>Self-employed</option>
-                  <option>Freelance</option>
-                </select>
-              </div>
-              <div class="form-group text-left mb-4">
-                <h3 class="h5 font-weight-bold text-uppercase mb-0 dela-gothic"><label for="exampleFormControlSelect1">I'm from</label></h3>
-                <select class="form-control rounded-sm" <%= search_field_tag :query_from, params[:query_from] %> id="industry_from">
-                  <option value="" disabled selected>Select your current industry</option>
-                  <option>Agriculture</option>
-                  <option>Art/Design</option>
-                  <option>Consulting</option>
-                  <option>Hospitality</option>
-                  <option>IT/Tech</option>
-                  <option>Law</option>
-                  <option>Leisure/Tourism</option>
-                  <option>Marketing/Advertising</option>
-                  <option>Media/Entertainment</option>
-                  <option>Public Services/Govt</option>
-                  <option>Retail</option>
-                  <option>Pharmaceuticals</option>
-                </select>
-              </div>
-              <div class="form-group text-left">
-                <h3 class="h5 font-weight-bold text-uppercase mb-0 dela-gothic"><label for="exampleFormControlSelect1">I'm switching to</label></b></h3>
-                <select class="form-control rounded-sm" <%= search_field_tag :query_to, params[:query_to] %> id="industry_to">
-                  <option value="" disabled selected>Select ideal role</option>
-                  <option>Still Exploring</option>
-                  <option>Web Developer</option>
-                  <option>Product Manager</option>
-                  <option>Fullstack Engineer</option>
-                  <option>Frontend Developer</option>
-                  <option>Backend Developer</option>
-                  <option>Data Analyst</option>
-                  <option>Android Developer</option>
-                  <option>IOS Developer</option>
-                  <option>Hardware Engineer</option>
-                  <option>Cloud Engineer</option>
-                  <option>DevOps Engineer</option>
-                </select>
-              </div>
-              <%= submit_tag "Start Connecting", class: "btn btn-primary text-white btn-block rounded-sm rounded-pill dela-gothic text-uppercase p-2 mt-4" %>
-            </form>
-            <% end %>
-          </div>
-          <div class="dot-dot dot-dot-75 dot-dot-1 bg-green" style="opacity:50%;">
-          </div>
-          <div class="dot-dot dot-dot-100 dot-dot-2 bg-orange" style="opacity:50%">
-          </div>
-        </div>
-        <div class="col-12 col-md-6 position-relative mb-5 mb-md-0">
-          <div class="hero-prop hero-prop-1 card border-0 rounded-sm shadow-sm text-left">
-            <h6 class="dela-gothic">FEELING UNCERTAIN?</h6>
-            <p class="mb-0">Connect with other career switchers or mentors, share your concern and get advice.</p>
-          </div>
-          <div class="hero-image-wrap">
-            <%= image_tag("connect-dots-hero-img.svg", :alt => "ConnectDots Hero") %>
-          </div>
-          <div class="hero-prop hero-prop-2 card border-0 rounded-sm shadow-sm text-left">
-            <h6 class="dela-gothic">NOT SURE WHERE TO START?</h6>
-            <p class="mb-0">Check out how your network reached their goal and explore the right path based on your profile.</p>
-          </div>
-          <div class="hero-prop hero-prop-3 card border-0 rounded-sm shadow-sm text-left">
-            <h6 class="dela-gothic">TROUBLE PLANNING YOUR GOALS?</h6>
-            <p class="mb-0">Select the best roadmap template from your network and personalize it to your lifestyle and budget.</p>
-          </div>
-          <div class="dot-dot dot-dot-100 dot-dot-3 bg-yellow position-absolute" style="opacity:50%;">
-          </div>
-          <div class="dot-dot dot-dot-50 dot-dot-4 bg-blue position-absolute" style="opacity:50%;">
-          </div>
+    <div class="home-page-top">
+      <div class="home-image">
+        <%= image_tag "mainimage-shrink.jpg", class: "img-fluid" %>
+      </div>
+    </div>
+    <div class="home-page-top">
+      <div class="hero-title">
+        <h1 class="text-left">Meet professionals who switched careers from where you are now</h1>
+        <div class="hero-title-move">
+          Switching from <div id="text"></div><div id="cursor"></div> to a new industry or role irrelevant to your educational background or previous experience?
         </div>
       </div>
     </div>
   </div>
-
+  <div class="search-container">
+    <div class="searchbox">
+      <%= form_tag show_pages_path, method: :get do %>
+        <div class="search-cards">
+        <div class="search-fields">
+          <p class="search-small">I'm currently working in</p>
+          <select class="form-control category" <%= search_field_tag :query_role, params[:query_role] %> id="industry_form">
+            <option value="" disabled selected>Current Industry</option>
+            <option>Agriculture</option>
+            <option>Art/Design</option>
+            <option>Consulting</option>
+            <option>Hospitality</option>
+            <option>IT/Tech</option>
+            <option>Law</option>
+            <option>Leisure/Tourism</option>
+            <option>Marketing/Advertising</option>
+            <option>Media/Entertainment</option>
+            <option>Public Services/Govt</option>
+            <option>Retail</option>
+            <option>Pharmaceuticals</option>
+          </select>
+        </div>
+        <div class="search-fields">
+          <p class="search-small">My current job is</p>
+          <select class="form-control category" <%= search_field_tag :query_role, params[:query_role] %> id="industry_role">
+            <option value="" disabled selected>Current Job/Role</option>
+            <option>Designer</option>
+            <option>Marketeer</option>
+            <option>Analyst</option>
+            <option>Operator</option>
+            <option>Product Manager</option>
+            <option>Copywriter</option>
+            <option>Account Manager</option>
+            <option>Project Manager</option>
+            <option>Risk Analyst</option>
+            <option>Recruiter</option>
+            <option>Accountant</option>
+            <option>Sales</option>
+            <option>Customer Support</option>
+            <option>Research</option>
+            <option>Instruction/Coaching</option>
+            <option>Consulting</option>
+            <option>Self-employed</option>
+            <option>Freelance</option>
+          </select>
+        </div>
+        <div class="search-fields">
+          <p class="search-small">I want to switch to</p>
+          <select class="form-control category" <%= search_field_tag :query_to, params[:query_to] %> id="industry_to">
+            <option value="" disabled selected>New Industry</option>
+            <option>Tech/IT</option>
+            <option>Business</option>
+            <option>Other industries</option>
+          </select>
+        </div>
+        <div class="search-fields">
+          <p class="search-small">I want to work as a/an</p>
+          <select class="form-control category" <%= search_field_tag :query_to, params[:query_to] %> id="role_to">
+            <option value="" disabled selected>New Job/Role</option>
+            <option>Software engineer</option>
+            <option>Consultant</option>
+            <option>Web developer</option>
+            <option>Data scientist</option>
+          </select>
+        </div>
+        <%= submit_tag "Start Connecting", class: "btn btn-primary col-md-2 form-control" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="feature-page-body">
+    <div class="cards">
+      <div class="card">
+        <div class="feature-image-1">
+          <%= image_tag "3.png" %>
+        </div>
+        <div class="feature-text">
+          <h4>Feeling uncertain?</h4>
+          <p>Connect with 10,000+ career switchers, mentors worldwide, and get advice before you decide</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="feature-image-2">
+          <%= image_tag "1.png" %>
+        </div>
+        <div class="feature-text">
+          <h4>Too many paths to choose?</h4>
+          <p>Choose the right programs, courses, materials etc recommended by other career switchers</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="feature-image-3">
+          <%= image_tag "2.png" %>
+        </div>
+        <div class="feature-text">
+          <h4>Limited budget and time?</h4>
+          <p>Build your own roadmap personalized to your budget, timframe and availability</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

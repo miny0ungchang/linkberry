@@ -12,6 +12,7 @@ import 'jquery';
 
 import { profileModal } from '../components/profile_modal';
 import { backToResults } from '../packs/back_to_results';
+import { writeDelete } from '../packs/home'; 
 
 // import { showProfile } from '../packs/show_profile';
 // import { roadMapBuild} from '../packs/roadmap';
@@ -39,6 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   // addCourseBtn();
   scrollDown();
   startChatRoom();
+  writeDelete();
 });
 
 import "stylesheets/application"
