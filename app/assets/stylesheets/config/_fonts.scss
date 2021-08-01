@@ -1,5 +1,6 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;300;400;500;600;700;800&display=swap');
 
 // Define fonts for body and headers
@@ -15,3 +16,13 @@ $headers-font: "Lato", "Helvetica", "sans-serif", "Lexend";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+
+.linkberry-title {
+  font-family: 'Lexend', sans-serif;
+}
+
+
+.linkberry-description-light {
+  font-weight: 200;
+}

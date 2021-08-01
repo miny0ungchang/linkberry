@@ -42,3 +42,5 @@ document.addEventListener('turbolinks:load', () => {
   startChatRoom();
   writeDelete();
 });
+
+import "stylesheets/application"
